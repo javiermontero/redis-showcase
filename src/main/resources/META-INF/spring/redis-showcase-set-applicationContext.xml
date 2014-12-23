@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.devadictos.java.redis.showcase.sample3" />
+
+
+	<!-- Redis Template -->
+	<bean id="keyRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
+		p:connection-factory-ref="jedisConnFactory" p:keySerializer-ref="stringRedisSerialer"
+		p:valueSerializer-ref="stringRedisSerialer" />
+
+	<bean id="stringRedisSerialer"
+		class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+
+
+
+	<util:list value-type="java.lang.String" id="atleti">
+		<value>Oblak</value>
+		<value>Moya</value>
+		<value>Juanfran</value>
+		<value>Gamez</value>
+		<value>Miranda</value>
+		<value>Godin</value>
+		<value>Gimenez</value>
+		<value>Siqueira</value>
+		<value>Ansaldi</value>
+		<value>Mario Suarez</value>
+		<value>Koke</value>
+		<value>Gabi</value>
+		<value>Tiago</value>
+		<value>Arda turan</value>
+		<value>Raul Garcia</value>
+		<value>Mandzukic</value>
+		<value>Griezman</value>
+		<value>Raul Jimenez</value>
+		<value>Saul</value>
+		<value>Cebolla</value>
+		<value>Cerci</value>
+	</util:list>
+
+	<util:list value-type="java.lang.String" id="spain">
+		<value>De Gea</value>
+		<value>Casillas</value>
+		<value>Juanfran</value>
+		<value>Monreal</value>
+		<value>Ramos</value>
+		<value>Pique</value>
+		<value>Dominguez</value>
+		<value>Alba</value>
+		<value>Koke</value>
+		<value>Iniesta</value>
+		<value>Busquets</value>
+		<value>Torres</value>
+		<value>Costa</value>
+		<value>Raul Garcia</value>
+		<value>Silva</value>
+	</util:list>
+
+
+	<util:list value-type="java.lang.String" id="uruguay">
+		<value>Muslera</value>
+		<value>Lugano</value>
+		<value>Godín</value>
+		<value>Fucile</value>
+		<value>Gargano</value>
+		<value>Pereira</value>
+		<value>Cebolla</value>
+		<value>Abel Hernandez</value>
+		<value>Luis Suarez</value>
+		<value>Forlán</value>
+		<value>Stuani</value>
+		<value>Rodrigo Munoz</value>
+		<value>Gimenez</value>
+		<value>Lodeiro</value>
+		<value>Diego P</value>
+		<value>Pereira</value>
+		<value>Arevalo</value>
+		<value>Ramirez</value>
+		<value>Coates</value>
+		<value>Gonzalez</value>
+		<value>Cavani</value>
+		<value>Caceres</value>
+		<value>Silva</value>
+	</util:list>
+
+</beans>
